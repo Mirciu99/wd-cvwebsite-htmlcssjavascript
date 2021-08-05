@@ -1,0 +1,251 @@
+/* DOCUMENTATIE
+1.background:Sets all the background properties in one declaration
+2.background-attachment:Sets whether a background image is fixed or scrolls with the rest of the page
+3.background-position:Sets the starting position of a background image
+4.background-size:Specifies the size of the background image(s)
+5.border:The CSS border properties allow you to specify the style, width, and color of an element's border.
+6.border-radius:The border-radius property is used to add rounded borders to an element
+7.margin:CSS has properties for specifying the margin for each side of an element
+More:
+margin: 25px 50px 75px;
+top margin is 25px
+right and left margins are 50px
+bottom margin is 75px
+All the margin properties can have the following values:
+
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+8.padding:Padding is used to create space around an element's content, inside of any defined borders.
+9.height & width:The CSS height and width properties are used to set the height and width of an element.
+10.text-align:The text-align property is used to set the horizontal alignment of a text
+11.text-decoration:The text-decoration property is used to set or remove decorations from text
+12.font-weight:The font-weight property specifies the weight of a font 
+13.font-size:Setting the text size with pixels gives you full control over the text size
+14.font-family:Specifies the font family for text
+15.font-size:Specifies the font size of text
+16.font-weight:Specifies the weight of a font
+17.:a:hover:a link when the user mouses over it
+18.display:The display property specifies if/how an element is displayed
+19.max-width:Using max-width instead, in this situation, will improve the browser's handling of small windows.
+20.overflow:The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+21.float:The CSS float property specifies how an element should float.
+22.
+*/
+
+
+
+
+
+@font-face {
+    font-family: 'futura';
+    src: url(futuramedium/Futuramedium.ttf);
+  }
+
+*{
+font-family: futura;
+font-weight: 500;
+}
+/* editare header */
+
+.header{
+    z-index: 999;
+    position: fixed;
+    background: #00a2ff;
+    top: 0;
+    left: 0;
+    width: 75%;
+    padding: 5px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+  }
+
+.header img {
+    float: left;
+    width: 80px;
+
+  }
+
+
+  
+  header .navigation a{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration:none;
+    margin-left: 30px;
+  }
+  
+  header .navigation a:hover{
+    color: #3a6cf4;
+  }
+
+/* stop header */
+
+
+/* editare section main */
+
+
+.main{
+    padding: 100px 200px;
+    position: relative;
+    width: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(img/bg.jpg)no-repeat;
+    opacity: 0.8;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: 5rem;
+}
+
+.main .content{
+    max-width: 1980px;
+}
+  
+.main .content h2{
+    color: blue;
+    font-size: 3em;
+    font-weight: 800;
+}
+  
+.main .content .animatii-text{
+    position: relative;
+    height: 70px;
+    overflow: hidden;
+}
+
+.main .content .animatii-text h3{
+    color: rgb(5, 5, 143);
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 1px;
+
+}
+
+.main .content .animatii-text h3:nth-child(1){
+    animation: text-move 10s infinite;
+}
+
+@keyframes text-move{
+    0%{
+      margin-top: 0;
+    }
+    25%{
+      margin-top: -110px;
+    }
+    50%{
+      margin-top: -220px;
+    }
+    75%{
+      margin-top: -110px;
+    }
+    100%{
+      margin-top: 0;
+    }
+}
+
+/* stop section main */
+
+/* editare section about */
+.about{
+    margin-bottom: 5rem;
+}
+  .about .section-title{
+    position: relative;
+    color: #3a6cf4;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 5px
+  }
+
+  .about .content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .about .content .col-left{
+    position: relative;
+    width: 45%;
+  }
+  
+  .about .content .col-right{
+    position: relative;
+    width: 50%;
+  }
+
+  .about .content .col-left .img-card{
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+  }
+  
+  .about .content .col-left .img-card img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:scale-down;
+    border-radius: 10px;
+  }
+
+  /* stop section about */
+
+  /* editare section contact */
+
+  .contact-form .input-box{
+    position: relative;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form .input-box input,
+  .contact-form .input-box textarea{
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 500;
+    border: 1px solid rgb(247, 163, 7);
+    border-radius: 5px;
+  }
+  
+  .contact-form .input-box .send-btn{
+    color: rgb(11, 114, 248);
+    background: #f4aa3a;
+    display: inline;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 3px;
+    width:100%;
+    margin-bottom: 5rem;
+
+  }
+
+    /* editare section contact */
+
+    /* editare section footer */
+
+.footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding-bottom: 20px;
+   background-color: #00a2ff;
+   text-align: center;
+}
+.footer .footer-title{
+    color:#f4aa3a;
+}
+  
